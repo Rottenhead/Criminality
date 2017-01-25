@@ -3,7 +3,7 @@ package com.example.satan.criminality;
 import java.util.Date;
 import java.util.UUID;
 
-class Crime {
+public class Crime {
 
     private UUID mId;
     private String mTitle;
@@ -11,7 +11,11 @@ class Crime {
     private boolean mSolved;
 
     Crime() {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Crime(UUID id){
+        mId = id;
         mDate = new Date();
     }
 
@@ -23,7 +27,7 @@ class Crime {
         return mTitle;
     }
 
-    void setTitle(String title) {
+    public void setTitle(String title) {
         mTitle = title;
     }
 
@@ -39,7 +43,7 @@ class Crime {
         return mSolved;
     }
 
-    void setSolved(boolean solved) {
+    public void setSolved(boolean solved) {
         mSolved = solved;
     }
 }
